@@ -1,9 +1,17 @@
 <template>
-    <ul>
-        <li v-for="(position, index) in SAMPLE_LEAGUE_TABLE" :key="position.id">
-            <Position :position=position :rank=index+1 />
-        </li>
-    </ul>
+ <b-col md={6}>
+      <b-card bg-variant="primary"
+                text-variant="white"
+                header="Ligatabelle zum Selberstecken"
+                class="text-center">
+     <div className="panel-body"
+          v-for="(position, index) in SAMPLE_LEAGUE_TABLE" :key="position.id">
+       <Position :position=position :rank=index+1 />
+     </div>
+  </b-card>
+</b-col>
+
+
 </template>
 <script>
 import { SAMPLE_LEAGUE_TABLE } from '../constants/SampleData';
