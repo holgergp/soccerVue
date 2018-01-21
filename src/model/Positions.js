@@ -4,9 +4,7 @@ export default class Positions {
     return zeroBasedIndex + 1;
   };
 
-  static findTeam = (teamId, positions) => {
-    return positions.find(team => team.id === teamId);
-  };
+  static findTeam = (teamId, positions) => positions.find(team => team.id === teamId);
 
   static recalculateSwappedPositions = (
     sourceTeamId,

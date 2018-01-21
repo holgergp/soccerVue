@@ -5,13 +5,13 @@
 </template>
 
 <script>
-import LeagueTable from './components/LeagueTable.vue';
+import LeagueTable from './components/LeagueTable';
 
 export default {
   name: 'App',
   components: {
-		LeagueTable
-	},
+    LeagueTable,
+  },
 };
 </script>
 
