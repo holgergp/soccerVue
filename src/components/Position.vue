@@ -1,7 +1,9 @@
 <template>
-    <div v-bind:class="teamCssClass">
+<span>
+<b-button v-bind:class="teamCssClass">
         <Team :name=position.name />
-    </div>
+  </b-button>
+</span>
 </template>
 <script>
 
@@ -29,7 +31,7 @@ export default {
       } else {
         rankClass = 'abstiegClass tabelleClass';
       }
-      return classNames('col-md-12', 'btn', rankClass);
+      return classNames('col-md-12', rankClass);
     },
   },
 };
@@ -60,4 +62,4 @@ export default {
   background-color: rgb(255, 70, 67);
   margin-bottom: 8px;
 }
-    </style>
+</style>

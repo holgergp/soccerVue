@@ -6,6 +6,7 @@
   - Linter integration works well
   - Bytes with preetier
     - might go with that
+    - WIP: https://github.com/vuejs/vue-cli/issues/498
 - Vue bootstrap integration
   - works
   - Little work needed that it looks like react version
@@ -20,4 +21,17 @@
   - imports in the script tag below
   - some magic going on there
 - ditch router for now
+- ghpages integration not out of the box
+- vetur for vscode jsut works
+- go started pretty quick
+  - From zero to teams in say < 2 hours
+- contenteditable needs more work ...
+   - roll your own? https://blog.midkemia.fr/vue-js-and-editable-contents/
+
+TODO:
+  - DND
+  - Localstorage
+  - Contenteditable
+  - Some beautification
+  - Deployment 
 

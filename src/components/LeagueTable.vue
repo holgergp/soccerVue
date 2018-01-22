@@ -1,11 +1,11 @@
 <template>
- <b-col md={6}>
+ <b-col md="6">
       <b-card bg-variant="primary"
                 text-variant="white"
                 header="Ligatabelle zum Selberstecken"
+                body-bg-variant="white"
                 class="text-center">
-     <div className="panel-body"
-          v-for="(position, index) in SAMPLE_LEAGUE_TABLE" :key="position.id">
+     <div v-for="(position, index) in SAMPLE_LEAGUE_TABLE" :key="position.id">
        <Position :position=position :rank=index+1 />
      </div>
   </b-card>
