@@ -1,0 +1,23 @@
+- Started with vue-cli
+  - works
+  - generates a lot of noise compared to cra
+    - all this webpack stuff
+- Airbnb integration kinda sucks/quite unusual
+  - Linter integration works well
+  - Bytes with preetier
+    - might go with that
+- Vue bootstrap integration
+  - works
+  - Little work needed that it looks like react version
+- Definiton of props kinda verbose
+  - miss proptypes
+  - Flow/Typescript?
+- computed properties remind me of knockout
+- Port works 
+- Go with single file components,
+  - mixing concerns in one file
+  - reflected in different syntax
+  - imports in the script tag below
+  - some magic going on there
+- ditch router for now
+
