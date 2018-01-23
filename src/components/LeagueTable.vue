@@ -5,24 +5,27 @@
                 header="Ligatabelle zum Selberstecken"
                 body-bg-variant="white"
                 class="text-center">
-     <div v-for="(position, index) in SAMPLE_LEAGUE_TABLE" :key="position.id">
-       <Position :position=position :rank=index+1 />
-     </div>
+    <draggable :list="list" class="dragArea">
+      <div v-for="(position, index) in list" :key="position.id">
+        <Position :position=position :rank=index+1 />
+      </div>
+    </draggable>
   </b-card>
 </b-col>
 
 
 </template>
 <script>
-import { SAMPLE_LEAGUE_TABLE } from '../constants/SampleData';
+import draggable from 'vuedraggable';
 import Position from './Position';
+import { SAMPLE_LEAGUE_TABLE } from '../constants/SampleData';
 
 export default {
   name: 'LeagueTable',
-  components: { Position },
+  components: { Position, draggable },
   data() {
     return {
-      SAMPLE_LEAGUE_TABLE,
+      list: SAMPLE_LEAGUE_TABLE,
     };
   },
 };
