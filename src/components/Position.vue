@@ -31,7 +31,7 @@ export default {
       } else {
         rankClass = 'abstiegClass tabelleClass';
       }
-      return classNames('col-md-12', rankClass);
+      return classNames('col-md-12', 'list-item', rankClass);
     },
   },
 };
@@ -41,6 +41,7 @@ export default {
 .tabellenfuehrerClass {
   background-color: #5ab362;
   margin-bottom: 8px;
+  overflow: auto;
 }
 .championsLeagueClass {
   background-color: #0000ff;
@@ -61,5 +62,17 @@ export default {
 .abstiegClass {
   background-color: rgb(255, 70, 67);
   margin-bottom: 8px;
+}
+
+.list-item {
+  display: inline-block;
+  margin-right: 10px;
+}
+.list-enter-active, .list-leave-active {
+  transition: all 1s;
+}
+.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+  opacity: 0;
+  transform: translateY(30px);
 }
 </style>
