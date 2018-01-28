@@ -8,7 +8,7 @@
       <draggable :list="list">
         <transition-group name="list">
           <div v-for="(position, index) in list" :key="position.id">
-            <Position :position=position :rank=index+1 v-on:contentedited="updateLocalstorage"/>
+            <Position :position=position :rank=index+1 v-on:teamnameUpdated="updateLocalstorage"/>
           </div>
         </transition-group>
       </draggable>

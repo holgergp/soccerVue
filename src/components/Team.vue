@@ -6,12 +6,14 @@
  /></span>
 </template>
 <script>
+import eventConstants from '../constants/events';
+
 export default {
   name: 'Team',
   props: { name: { type: String, required: true } },
   methods: {
     changed(event) {
-      this.$emit('contentedited', { updatedTeamname: event.target.innerText });
+      this.$emit(eventConstants.teamnameUpdated, { updatedTeamname: event.target.innerText });
     },
   },
 };

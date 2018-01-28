@@ -1,13 +1,15 @@
 <template>
 <span>
 <b-button v-bind:class="teamCssClass">
-        <Team :name=position.name v-on:contentedited="bubbleUp"/>
+        <Team :name=position.name v-on:teamnameUpdated="bubbleUp"/>
   </b-button>
 </span>
 </template>
 <script>
 import classNames from 'classnames';
 import Team from './Team';
+import eventConstants from '../constants/events';
+
 
 export default {
   name: 'Position',
@@ -38,7 +40,11 @@ export default {
   },
   methods: {
     bubbleUp(event) {
-      this.$emit('contentedited', { updatedTeamname: event.updatedTeamname, position: this.position });
+      this.$emit(eventConstants.teamnameUpdated,
+        { updatedTeamname: event.updatedTeamname,
+          position: this.position,
+        },
+      );
     },
   },
 };
