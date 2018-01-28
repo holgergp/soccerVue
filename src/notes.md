@@ -27,11 +27,33 @@
   - From zero to teams in say < 2 hours
 - contenteditable needs more work ...
    - roll your own? https://blog.midkemia.fr/vue-js-and-editable-contents/
+- DND was rather straightforward
+- Localstorage was more tricky
+  - No out of the box solution
+  - went with https://blog.midkemia.fr/vue-js-and-editable-contents/
+  - Editing was easy, but propagating changes upward, so that localstorage was informaed was not
+  - I had to learn the concept of child/parent communication
+  - In Vue an $emit just fires an event to be consumed by the direct parent
+    - You have to refire your event there, I didn't expect that
+    - The react way of using a callback via props works as well, but does not seem to be the idiomatic way of doing things in vue
+    - Nice about this is I can fire the event very close to the occurence of the contentedited event, and then can enrich the event on its way upward: Here at info about the team which name was edited. The Team component only knows about its name.
+    I initially assumed, that changing the name alone is sufficient, that it is propagated to the LeagueTable, as it is bound. That assumption was wrong.
+    This solutiom now feels better than expected. A thing that bothers me now, that LeagueTable knows pretty much. It is okay for me that it handles the list of teams, that's what it was made for. But handling LocalStorage should not be a concern of the LeagueTable. What do you think? A solution would be to pull the leagueTable Data one level upward to App, so I could handle LS there, but that would render the LeagueTable component to a rather passThrough component. Hmmm.
+    Vuex might be a solution here. I think of a LocalStorage middleware that just does this thing for me. I think I would not need eventing then. as well. Might check that out. 
+- Airbnbs linter rules seem odd to me
+  - dangling commas seem odd to me
+  - import order seems odd to me
+  - but large parts are due to my inability to configure VSCode properly to work with local eslint rules
+    - It just got mangled my formatting on every autoformat, as I somewhere configured Prettier to be my formatter
+      - Which I like
+    - Need to spend some time there.
 
 TODO:
-  - DND
-  - Localstorage
-  - Contenteditable
+  - More Tests
+    - How does Jest behave with Vue
+    - Is there something like enzyme
+  - VSCode working nicer with eslint-airbnb
+    - Or Setup Prettier with vue-cli
   - Some beautification
   - Deployment 
 
