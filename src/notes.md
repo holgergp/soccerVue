@@ -14,7 +14,7 @@
   - miss proptypes
   - Flow/Typescript?
 - computed properties remind me of knockout
-- Port works 
+- Port works
 - Go with single file components,
   - mixing concerns in one file
   - reflected in different syntax
@@ -39,7 +39,7 @@
     - Nice about this is I can fire the event very close to the occurence of the contentedited event, and then can enrich the event on its way upward: Here at info about the team which name was edited. The Team component only knows about its name.
     I initially assumed, that changing the name alone is sufficient, that it is propagated to the LeagueTable, as it is bound. That assumption was wrong.
     This solutiom now feels better than expected. A thing that bothers me now, that LeagueTable knows pretty much. It is okay for me that it handles the list of teams, that's what it was made for. But handling LocalStorage should not be a concern of the LeagueTable. What do you think? A solution would be to pull the leagueTable Data one level upward to App, so I could handle LS there, but that would render the LeagueTable component to a rather passThrough component. Hmmm.
-    Vuex might be a solution here. I think of a LocalStorage middleware that just does this thing for me. I think I would not need eventing then. as well. Might check that out. 
+    Vuex might be a solution here. I think of a LocalStorage middleware that just does this thing for me. I think I would not need eventing then. as well. Might check that out.
 - Airbnbs linter rules seem odd to me
   - dangling commas seem odd to me
   - import order seems odd to me
@@ -47,6 +47,8 @@
     - It just got mangled my formatting on every autoformat, as I somewhere configured Prettier to be my formatter
       - Which I like
     - Need to spend some time there.
+    - I think this happens due to to Vetur, which does not seem to read the Airbnb settings which are in the project
+      - Weird, seems to me like a rabbit hole which I don't want to go down right now. Formatting and fixing on the commandline work fine
 
 TODO:
   - More Tests
@@ -55,5 +57,5 @@ TODO:
   - VSCode working nicer with eslint-airbnb
     - Or Setup Prettier with vue-cli
   - Some beautification
-  - Deployment 
+  - Deployment
 
