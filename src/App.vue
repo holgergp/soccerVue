@@ -57,10 +57,7 @@ body {
   background: #666;
 }
 
-
 .textPointer {
   cursor: text;
 }
-
-
 </style>

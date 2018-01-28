@@ -1,19 +1,21 @@
 <template>
 <span>
 <b-button v-bind:class="teamCssClass">
-        <Team :name=position.name />
+        <Team :name=position.name v-on:contentedited="bubbleUp"/>
   </b-button>
 </span>
 </template>
 <script>
-
 import classNames from 'classnames';
 import Team from './Team';
 
 export default {
   name: 'Position',
   components: { Team },
-  props: ['position', 'rank'],
+  props: {
+    position: { type: Object, required: true },
+    rank: { type: Number, required: true },
+  },
   computed: {
     teamCssClass() {
       let rankClass;
@@ -34,10 +36,14 @@ export default {
       return classNames('col-md-12', 'list-item', rankClass);
     },
   },
+  methods: {
+    bubbleUp(event) {
+      this.$emit('contentedited', { updatedTeamname: event.updatedTeamname, position: this.position });
+    },
+  },
 };
 </script>
 <style>
-
 .tabellenfuehrerClass {
   background-color: #5ab362;
   margin-bottom: 8px;
@@ -68,10 +74,12 @@ export default {
   display: inline-block;
   margin-right: 10px;
 }
-.list-enter-active, .list-leave-active {
+.list-enter-active,
+.list-leave-active {
   transition: all 1s;
 }
-.list-enter, .list-leave-to /* .list-leave-active below version 2.1.8 */ {
+.list-enter,
+.list-leave-to {
   opacity: 0;
   transform: translateY(30px);
 }
