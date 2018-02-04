@@ -73,6 +73,8 @@
         - seems no to be that esoteric, there really is this option
       - Next yarn deploy it works
          - Nice!
+     - This handling with deployment files seems odd as well
+        - Merge conflict!
 
 TODO:
   - More Tests
