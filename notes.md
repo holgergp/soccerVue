@@ -76,6 +76,11 @@
      - This handling with deployment files seems odd as well
         - Merge conflict!
 
+ - Tests
+   - Props structure less than perfect
+     - Object Prop Validation
+        -  How to validate name present in Positon
+     - In other news: Do I need position?
 TODO:
   - More Tests
   - VSCode working nicer with eslint-airbnb
