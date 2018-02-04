@@ -81,9 +81,19 @@
      - Object Prop Validation
         -  How to validate name present in Positon
      - In other news: Do I need position?
+     - Testing is rather straightforward
+     - vue-test-utils works as enzyme
+     - Needed to mock localstorage
+     - Needed to 'use' localstorage and bootstrap in test mode
+       - maybe not needed all the time
+     - Wrote one mounting test in League Table, to "see" the app fully rendered
 TODO:
-  - More Tests
   - VSCode working nicer with eslint-airbnb
     - Or Setup Prettier with vue-cli
   - Some beautification
+    - Dragging shows some nasty white edges
+  - More Tests
+    - Maybe DND testing
+    - But I think will be quite cumbersome, without learnings about vue. Later ...
+
 
