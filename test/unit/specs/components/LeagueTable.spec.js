@@ -1,6 +1,6 @@
 import LeagueTable from '@/components/LeagueTable';
 import Position from '@/components/Position';
-import {mount, shallow} from 'vue-test-utils';
+import { mount, shallow } from 'vue-test-utils';
 
 describe('LeagueTable component should', () => {
   it('render without crashing', () => {

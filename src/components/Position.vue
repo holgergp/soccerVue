@@ -10,6 +10,16 @@ import classNames from 'classnames';
 import Team from './Team';
 import eventConstants from '../constants/events';
 
+const classForRank = [
+  { from: 1, to: 1, className: 'tabellenfuehrerClass' },
+  { from: 2, to: 3, className: 'championsLeagueClass' },
+  { from: 4, to: 6, className: 'europaLeagueClass' },
+  { from: 7, to: 15, className: 'mittelfeldClass' },
+  { from: 16, to: 16, className: 'relegationClass' },
+  { from: 17, to: 18, className: 'abstiegClass' },
+];
+
+const between = (value, lower, upper) => value <= upper && value >= lower;
 
 export default {
   name: 'Position',
@@ -20,22 +30,8 @@ export default {
   },
   computed: {
     teamCssClass() {
-      let rankClass;
-      const rank = parseInt(this.rank, 10);
-      if (rank === 1) {
-        rankClass = 'tabellenfuehrerClass tabelleClass';
-      } else if (rank <= 3) {
-        rankClass = 'championsLeagueClass tabelleClass';
-      } else if (rank <= 6) {
-        rankClass = 'europaLeagueClass tabelleClass';
-      } else if (rank <= 15) {
-        rankClass = 'mittelfeldClass tabelleClass';
-      } else if (rank === 16) {
-        rankClass = 'relegationClass tabelleClass';
-      } else {
-        rankClass = 'abstiegClass tabelleClass';
-      }
-      return classNames('col-md-12', 'list-item', rankClass);
+      const rankClass = classForRank.find(cfr => between(this.rank, cfr.from, cfr.to));
+      return classNames('col-md-12', 'list-item', 'tabelleClass', rankClass.className);
     },
   },
   methods: {
@@ -48,6 +44,8 @@ export default {
     },
   },
 };
+
+
 </script>
 <style>
 .tabellenfuehrerClass {

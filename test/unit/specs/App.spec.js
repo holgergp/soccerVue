@@ -1,4 +1,4 @@
-import {shallow} from 'vue-test-utils';
+import { shallow } from 'vue-test-utils';
 import App from '@/App';
 
 
@@ -7,6 +7,5 @@ describe('App component should', () => {
     const wrapper = shallow(App);
     expect(wrapper.find('LeagueTable')).toBeDefined();
   });
-
 });
 
