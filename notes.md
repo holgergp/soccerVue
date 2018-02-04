@@ -78,10 +78,7 @@
 
 TODO:
   - More Tests
-    - How does Jest behave with Vue
-    - Is there something like enzyme
   - VSCode working nicer with eslint-airbnb
     - Or Setup Prettier with vue-cli
   - Some beautification
-  - Deployment
 
