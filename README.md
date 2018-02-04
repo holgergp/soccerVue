@@ -1,6 +1,7 @@
 # soccervue
 
 > A Vue.js project
+See it [here](https://holgergp.github.io/soccerVue/)
 
 ## Build Setup
 

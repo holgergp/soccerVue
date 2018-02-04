@@ -52,12 +52,28 @@
 
 - Tests with https://github.com/vuejs/vue-test-utils-jest-example
   - Setup was okay
+  - Needs some fiddling, as Jest needs to know how to deal with VUE Files. This has a little smell.
   - Feels like a duplicate of enzyme
     - where's debug()
     - why is it propsData not props
       - Why are the docs not sync+
         - https://vue-test-utils.vuejs.org/en/api/shallow.html
         - https://github.com/vuejs/vue-test-utils-jest-example/blob/master/test/Message.spec.js#L8
+
+- Deployment
+  - To GHPages
+  - First try with https://github.com/jeneser/vue-cli-ghpages led to empty page, probably some / too much somewhere
+    - Global install of CLI, strange
+  - Second try with https://github.com/KieferSivitz/vue-gh-pages
+    - Looked better, no global tool
+    - Deployment section
+    - First push didn't work, same error as above
+      - This one does'nt use GHPages branch but docs folder
+        - need to change that in settings
+        - seems no to be that esoteric, there really is this option
+      - Next yarn deploy it works
+         - Nice!
+
 TODO:
   - More Tests
     - How does Jest behave with Vue
