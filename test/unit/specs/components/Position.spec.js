@@ -9,7 +9,6 @@ describe('Position component should', () => {
 
   it('render a postiional CSS class name', () => {
     const wrapper = shallow(Position, {propsData: {rank: 1, position: {name: 'Test'}},});
-    const postionElement = wrapper.find('b-button');
-    expect(postionElement.is('.tabellenfuehrerClass')).toBe(true);
+    expect(wrapper.find('.tabellenfuehrerClass')).toBeDefined();
   });
 });
