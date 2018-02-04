@@ -50,6 +50,14 @@
     - I think this happens due to to Vetur, which does not seem to read the Airbnb settings which are in the project
       - Weird, seems to me like a rabbit hole which I don't want to go down right now. Formatting and fixing on the commandline work fine
 
+- Tests with https://github.com/vuejs/vue-test-utils-jest-example
+  - Setup was okay
+  - Feels like a duplicate of enzyme
+    - where's debug()
+    - why is it propsData not props
+      - Why are the docs not sync+
+        - https://vue-test-utils.vuejs.org/en/api/shallow.html
+        - https://github.com/vuejs/vue-test-utils-jest-example/blob/master/test/Message.spec.js#L8
 TODO:
   - More Tests
     - How does Jest behave with Vue
